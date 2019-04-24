@@ -1,6 +1,6 @@
 let img;
 function preload() {
-  img = loadImage('apple_PNG1234.png');
+  img = loadImage('apple_PNG12423.png');
 }
 function setup() {
   // Top-left corner of the img is at (0, 0)
