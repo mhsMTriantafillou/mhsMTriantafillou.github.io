@@ -12,7 +12,8 @@ function draw() {
 ellipse(s+150,s+300,s+100);
 ellipse(s+150, s+150, s+60);
 ellipse(s+150,s,s+25);
-//making snowmans nose
-triangle(s+160,s+160,s+140,s+140,s+150,s+150);
+//making snowmans arms
+line(250,325,100,250);
+line(350,325,500,250);
 
 }
