@@ -12,4 +12,6 @@ function setup() {
   mySound.setVolume(0.1)
   sound.play();
 }
-
+function draw(){
+  image(img, width/2, height/2);
+}
