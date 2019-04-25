@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw(){
-  image(img, 500,500);
+  image(img, 0,0,500,500);
 }
 
 function mousePressed() {
