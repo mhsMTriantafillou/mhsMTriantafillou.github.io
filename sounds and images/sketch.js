@@ -8,8 +8,7 @@ function preload() {
 function setup() {
   // Top-left corner of the img is at (0, 0)
   // Width and height are the img's original width and height
-  mySound.setVolume(0.1)
-  sound.play();
+  createCanvase(800,600);
 }
 function draw(){
   image(img, width/2, height/2);
