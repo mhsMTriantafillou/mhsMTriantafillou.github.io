@@ -2,7 +2,7 @@ let img;
 let mySound;
 function preload() {
 //making apple
-  img = loadImage('apple_PNG1234.png');
+  img = loadImage('');
   mySound= loadSound('Biting Apple-SoundBible.com-415478302.mp3');
 }
 function setup() {
