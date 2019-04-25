@@ -9,8 +9,19 @@ function setup() {
   // Top-left corner of the img is at (0, 0)
   // Width and height are the img's original width and height
   createCanvas(800,600);
-  mySound.play();
 }
+
 function draw(){
   image(img, 500,500);
+}
+
+function mousePressed() {
+  if (mySound.isPlaying()) {
+    // .isPlaying() returns a boolean
+    mySound.stop();
+    
+  } else {
+    mySound.play();
+    
+  }
 }
