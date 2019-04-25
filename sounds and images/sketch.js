@@ -9,7 +9,8 @@ function setup() {
   // Top-left corner of the img is at (0, 0)
   // Width and height are the img's original width and height
   createCanvas(800,600);
+  mySound.play();
 }
 function draw(){
-  image(img, width/2, height/2);
+  image(img, 500,500);
 }
