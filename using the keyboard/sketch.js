@@ -20,7 +20,7 @@ background(150);
 
 textSize(25)
 textFont('Georgia')
-text('for this game we use the trust system',200,400);	
+text('for this game we use the trust system',200,350);	
 	
 textSize(50);
 textFont('Georgia');
