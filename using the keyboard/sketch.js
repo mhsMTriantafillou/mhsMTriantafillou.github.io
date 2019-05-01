@@ -17,6 +17,11 @@ createCanvas(800,600);
 
 function draw(){
 background(150);
+
+textSize(25)
+textFont('Georgia')
+text('for this game we use the trust system',200,400);	
+	
 textSize(50);
 textFont('Georgia');
 text('Avoid the square',200,300);
