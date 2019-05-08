@@ -52,4 +52,4 @@ function draw() {
   fill(77,30,4);
   rect(refX/3+houseWidth-5, 373, 60, 100);
 
-} /end draw
+} //end draw
