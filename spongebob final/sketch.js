@@ -1,3 +1,8 @@
+/*Maki Triantafillou,
+Spongebob face assignment
+April 1, 2019*/
+
+
 //global variables
 
 let scale=1; // The scale value can be changed to change the size of Spongebob proportionally
@@ -19,6 +24,7 @@ function draw() {
   fill(252,260,3);
   rectMode(CENTER);
   rect(width/2,height/2, bodyWidth, bodyWidth+100*scale);
+  
   // Functions for drawing Spongebob's face
   eyeLashes();
   drawEyes();
@@ -189,7 +195,7 @@ function sponge()
   ellipse(width/2+bodyWidth/5,height/2-bodyWidth/1.9,eyeDiameter/1.5);
   ellipse(width/2+bodyWidth/3.125,height/2-bodyWidth/1.9,eyeDiameter/1.5);
 
-}
+}//end function sponge
 
 // Function for drawing pants, made by kayden jiwa
 function drawPants() {
@@ -230,4 +236,4 @@ function holes() {
   ellipse(width/2-eyeDiameter*1.3,height/2+eyeDiameter, 40*scale, 50*scale);
   ellipse(width/2+eyeDiameter*1.3,height/2+eyeDiameter/2, 40*scale, 50*scale);
   ellipse(width/2+eyeDiameter,height/2+eyeDiameter, 25*scale, 35*scale);
-}
+}//end function for the holes
