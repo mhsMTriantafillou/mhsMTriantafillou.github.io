@@ -40,11 +40,11 @@ line(posX,posY,100,100);
   if (posY < 0) {    // the object has moved off the canvas to the top
       speedY = -speedY;
   }
-}
+}//end draw
 
 function mouseClicked() {
   posX = mouseX;
   posY = mouseY;
   speedX = round(mouseX/100);
   speedY = round(mouseY/100);
-}
+}//end mouse clicked
