@@ -2,17 +2,35 @@
 
 let level = 0;
 
+let x1= 0;
+let x2= 600;
 
+let y= 300;
+
+let size= 50;
+
+let x1Speed= 5;
+let x2Speed=7.5;
+//assume objects have not collided
+let hit = false;
+let hitcharacter = false
+
+let ballX=805
+let ballY=20
+let followMouse = false
 //Sounds and images
 let police;
 let prison;
 let character;
 let secondary;
+let key;
 
 function preload(){
 police=loadImage('police.png')
 prison=loadImage('prison.png')
 character=loadImage('character.png')
+secondary=loadImage('secondary.png')
+key=loadImage('key.png')
 }
 
 function setup(){
@@ -102,23 +120,66 @@ if (level === 0) {
     text('You have been caught!',350,300);
 }
   else if (level === 6){
+
+    if (keyCode===79){
+      followMouse===true
+      ballX = mouseX
+      ballY = mouseY
+    }
+print(level ===6)
+print(followMouse)
+
     background(100,100,100)
     textSize(20)
     text('Congratulations you have fooled a few guards more work to come.',100,100);
     //---------------Creating Maze--------------------
     noStroke();
     fill(255);
-    rect(800,0, 40,200);
-    rect(800,200,400,40);
-    rect(800,200,40,200);
-    rect(800,400,150,40)
-elipse(mouseX, mouseY,100,100);
-
-
+    rect(800,0, 50,200);
+    rect(800,200,400,50);
+    rect(800,200,50,200);
+    rect(500,200,450,50);
+    rect(800,400,150,50);
+    rect(910,200,50,230);
+    image(secondary,1175,150,100,100);
+    rect(500,200,50,400);
+    rect(100,400,600,50);
+    image(secondary,675,350,100,100);
+    rect(100,400,50,200);
+    rect(30,400,75,50);
+    rect(30,200,50,230);
+    rect(30,200,300,50);
+    image(secondary,475,610,100,100);
+    image(secondary,75,610,100,100);
+    rect(300,200,50,600)
+    image(secondary,290,800,100,100);
+    rect(300,600,170,50);
+    rect(430,600,50,150);
+    rect(430,750,400,50);
+    image(secondary,820,700,100,100)
+    rect(700,600,50,175);
+    rect(700,600,300,50);
+    image(key,900,580,75,75);
+    noCursor()
+    image(character,ballX,ballY,30,30);
+    hitcharacter = collideRectRect(character,ballX,ballY,30,30,key,900,580,75,75);
+    if(hitcharacter===true){
+     level+=7
 }
 }
 
 
+else if(level=== 7){
+  clear()
+  background(100,100,100);
+  textSize(20)
+  text('Great job you got the guards key',50,50);
+  text('Get to the door it will take you outside',50,75);
+  fill(255);
+  rect(800,0,50,200);
+  rect(800,)
+}
+}
 
 function keyPressed() {
 //this makes enter change for each level
