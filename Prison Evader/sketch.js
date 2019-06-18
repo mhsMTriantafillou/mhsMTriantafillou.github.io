@@ -156,15 +156,15 @@ print(followMouse)
 
 
 
-else if(level=== 7){
+else if (level=== 7) {
   clear()
   background(100,100,100);
   textSize(20)
   text('Great job you got the guards key',50,50);
   text('Get to the door it will take you outside',50,75);
   fill(255);
-  rect(800,0,50,200);
-  rect(800,)
+  rect(800,0,60,200);
+  rect(800,50,200,60);
 }
 }
 
