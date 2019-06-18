@@ -153,7 +153,7 @@ print(followMouse)
     image(character,ballX,ballY,30,30);
    
 }
-}
+
 
 
 else if(level=== 7){
