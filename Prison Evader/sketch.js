@@ -164,7 +164,7 @@ else if (level=== 7) {
   text('Get to the door it will take you outside',50,75);
   fill(255);
   rect(800,0,60,200);
-  rect(800,50,200,60);
+  rect(600,50,400,60);
 }
 }
 
