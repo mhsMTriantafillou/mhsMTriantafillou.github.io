@@ -121,7 +121,7 @@ if (level === 0) {
 }
   else if (level === 6){
 
-    if (keyCode===79){
+    if (keyCode===32){
       followMouse===true
       ballX = mouseX
       ballY = mouseY
@@ -162,9 +162,7 @@ print(followMouse)
     image(key,900,580,75,75);
     noCursor()
     image(character,ballX,ballY,30,30);
-    hitcharacter = collideRectRect(character,ballX,ballY,30,30,key,900,580,75,75);
-    if(hitcharacter===true){
-     level+=7
+   
 }
 }
 
