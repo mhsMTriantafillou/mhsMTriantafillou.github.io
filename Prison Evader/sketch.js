@@ -2,18 +2,7 @@
 
 let level = 0;
 
-let x1= 0;
-let x2= 600;
-
-let y= 300;
-
-let size= 50;
-
-let x1Speed= 5;
-let x2Speed=7.5;
 //assume objects have not collided
-let hit = false;
-let hitcharacter = false
 
 let ballX=805
 let ballY=20
