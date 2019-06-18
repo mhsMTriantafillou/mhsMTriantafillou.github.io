@@ -1,8 +1,14 @@
 //Global Variables
+let collisionColour = [100,100,100,255];
+let collision = true;
+let findColour;
+
 
 let level = 0;
 
-//assume objects have not collided
+
+let y= 300;
+
 
 let ballX=805
 let ballY=20
@@ -13,13 +19,16 @@ let prison;
 let character;
 let secondary;
 let key;
-
+let door;
+let land;
 function preload(){
 police=loadImage('police.png')
 prison=loadImage('prison.png')
 character=loadImage('character.png')
 secondary=loadImage('secondary.png')
 key=loadImage('key.png')
+door=loadImage('door.png')
+land=loadImage('land.png')
 }
 
 function setup(){
@@ -38,7 +47,9 @@ level=5
 if(keyIsDown(51)){
 level=6
 }
-
+if(keyIsDown(82)){
+level=3
+}
 
 
 //Scene I
@@ -58,7 +69,7 @@ if (level === 0) {
 
 }
 
-//Scene II
+//Scene I
 
   else if (level === 1) {
 
@@ -73,7 +84,7 @@ if (level === 0) {
 
 
 }
-//Scene III
+//Scene II
   else if (level === 2){
     background(100,100,100);
     textSize(40)
@@ -85,7 +96,7 @@ if (level === 0) {
 
 
 }
-//Scene IIII
+//Scene III
   else if (level === 3){
     background(100,100,100);
     textSize(40)
@@ -98,29 +109,38 @@ if (level === 0) {
     text('3) He was playing a board game', 100, 700)
 
 }
+//Scene IV
   else if (level === 4){
     background(255,0,0);
     textSize(40)
     text('You have been caught!',350,300);
+    text('(R) to restart',350,350)
 }
+//Scene V
   else if (level === 5){
     background(255,0,0);
     textSize(40)
     text('You have been caught!',350,300);
+    text('(R) to Restart',350, 350);
 }
+//Scene VI
   else if (level === 6){
 
+    collision = true;
+
     if (keyCode===32){
-      followMouse===true
+      followMouse === true
       ballX = mouseX
       ballY = mouseY
     }
-print(level ===6)
-print(followMouse)
+
+
 
     background(100,100,100)
     textSize(20)
     text('Congratulations you have fooled a few guards more work to come.',100,100);
+    textSize('15')
+    text('Press the spacebar over the character to activate maze',100,175)
     //---------------Creating Maze--------------------
     noStroke();
     fill(255);
@@ -150,23 +170,74 @@ print(followMouse)
     rect(700,600,300,50);
     image(key,900,580,75,75);
     noCursor()
-    image(character,ballX,ballY,30,30);
-   
+
+    findColour = get(ballX, ballY);
+    print(findColour)
+
+    for (let i=0; i<4; i++)
+    {
+        if (findColour[i]!=collisionColour[i]){
+          collision = false;
+          break
+        }
+
+    }
+  image(character,ballX,ballY,30,30);
+    if(ballY>580-5 & ballX>900-5){
+      level=7
+
+    }
+
+
+    if (collision){
+      ballX=805
+      ballY=20
+      level = 3;
+    }
+
 }
 
-
-
-else if (level=== 7) {
+//Scene VII
+else if(level=== 7){
   clear()
-  background(100,100,100);
-  textSize(20)
-  text('Great job you got the guards key',50,50);
-  text('Get to the door it will take you outside',50,75);
-  fill(255);
-  rect(800,0,60,200);
-  rect(600,50,400,60);
+  background(100,100,100)
+    if (keyCode===32){
+      followMouse === true
+      ballX = mouseX
+      ballY = mouseY
+    }
+
+//moving object
+     image(key,ballX,ballY,40,40);
+
+
+    textSize(30)
+    text('Great job you got the gaurds key',50,50);
+    text('get to the door to get outside',50,100);
+    image(door,300,200,100,130);
+
+if(ballY<200+15 & ballX<300+15){
+  level=8
+
 }
+
 }
+
+else if (level === 8){
+  clear()
+  background(0,255,0)
+  fill(255,0,0)
+  textSize(50)
+  text('CONGRADULATIONS YOU ARE FREE',300,300);
+
+    }
+
+
+
+
+}
+
+
 
 function keyPressed() {
 //this makes enter change for each level
